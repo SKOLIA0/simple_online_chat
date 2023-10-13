@@ -1,0 +1,7 @@
+<h1>Создать новый чат</h1>
+
+<%= form_with model: @chat do |form| %>
+  <%= form.label :title, "Название чата:" %>
+  <%= form.text_field :title %>
+  <%= form.submit "Создать" %>
+<% end %>

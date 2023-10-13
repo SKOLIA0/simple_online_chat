@@ -1,0 +1,14 @@
+<h1><%= @chat.title %></h1>
+
+<%= turbo_frame_tag "messages_list" do %>
+  <% @chat.messages.each do |message| %>
+    <%= render partial: "messages/message", locals: { message: message } %>
+  <% end %>
+<% end %>
+
+<h2>Отправить сообщение</h2>
+<%= form_with model: [ @chat, Message.new ], data: { turbo_frame: "new_message_form" } do |form| %>
+  <%= form.label :content, "Сообщение:" %>
+  <%= form.text_area :content %>
+  <%= form.submit "Отправить" %>
+<% end %>

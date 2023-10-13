@@ -1,0 +1,10 @@
+<<!-- app/views/messages/_notification.html.erb -->
+<div class="notification">
+  Новое сообщение в чате: <%= chatTitle %>. Содержание: <%= messageContent %>.
+
+  <!-- Добавляем элемент audio для воспроизведения звука оповещения -->
+  <audio controls autoplay>
+    <source src="/audio/notification.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает элемент audio.
+  </audio>
+</div>
